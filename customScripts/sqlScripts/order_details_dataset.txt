@@ -1,0 +1,36 @@
+select od.id as order_item_id, 
+o.id as order_id,
+i.id as item_id,
+u.name as "Customer Name",
+CONCAT(i.brand, ' ', i.item) as SKU,
+i.item, 
+c.category,            
+i.price_per_unit, 
+od.quantity, 
+COALESCE(d1.discount_code, d2.discount_code, 'No Discount Code') as "Discount Code", 
+COALESCE(d1.discount_percent, d2.discount_percent, NULL) as "Discount Percent", 
+COALESCE(d1.discount_limit, d2.discount_limit, NULL) as "Discount Limit",
+COALESCE(d1.discount_type, d2.discount_type) as "Discount Type",
+o.order_date, 
+o.payment_method, 
+o.payment_status
+
+from order_details as od
+
+left join orders as o 
+on o.id = od.order_id
+
+left join discounts as d1
+on d1.discount_code = od.discount_code
+
+left join discounts as d2
+on d2.discount_code = o.discount_code
+
+left join items as i
+on i.id = od.item_id
+
+left join categories as c
+on c.id = i.category_id
+
+left join users as u
+on u.id = o.user_id;

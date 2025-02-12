@@ -1,0 +1,7 @@
+envs/.env
+dags/__pycache__
+customScripts/pythonScripts/__pycache__
+logs/
+
+!logs/.gitkeep
+!envs/.gitkeep
