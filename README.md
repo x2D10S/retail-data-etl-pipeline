@@ -3,7 +3,8 @@
 
 ### An ETL pipeline for a fake retail store.
 <br />
-What this project does: <br />
+
+#### What this project does: <br />
 
 1: Creates an **ETL pipeline** to store(in RDS), retreive, transform and store(in S3) retail data(pipeline dag can be found below). <br />
 2: Creates a database with relevant tables(schema can be found below) if the database does not exist. <br />
@@ -12,7 +13,8 @@ What this project does: <br />
 5: Transforms data based on user requirements. <br />
 6: Stores transformed data in cloud. <br />
 <br />
-What this project uses: <br />
+
+#### What this project uses: <br />
 
 1: **Airflow** to orchestrate the ETL pipeline. <br />
 2: **Python** as programming language for logic implemntation. <br />
@@ -32,15 +34,14 @@ Database schema:
 
 ![schema-img](image-1.png)
 
-### **Custom transformations:** <br />
+#### **Custom transformations:** <br />
 
 The best feature of this pipeline is to be able to create your own custom dataset without having to modify the code! <br />
 All one would have to do is write a sql query to query what they'd want and place it inside ***/customScripts/sqlScripts*** with '.txt' extension and the transformed csv will be available in the users S3 bucket once the pipeline is run. <br />
 
 <br />
-<br />
 
-### Data generation: <br />
+#### Data generation: <br />
 
 This project is also capable of generating fake data to be pushed into the RDS for experimentation. <br />
 This step is required initially as there is no data present at the start. <br />
