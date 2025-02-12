@@ -1,4 +1,5 @@
-#retail-data-etl-project
+# **retail-data-etl-project**
+<br />
 An ETL pipeline for a fake retail store.
 <br />
 What this project does: 
