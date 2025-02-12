@@ -1,8 +1,8 @@
 # **retail-data-etl-project**
 <br />
-An ETL pipeline for a fake retail store.
+## An ETL pipeline for a fake retail store.
 <br />
-What this project does: 
+What this project does: <br />
 1: Defines an ETL pipeline to store(in RDS), retreive, transform and store(in S3) retail data(pipeline dag can be found below). <br />
 2: Creates a database with relevant tables(schema can be found below) if the database does not exist. <br />
 3: Generates random fake data to populate the tables. <br />
